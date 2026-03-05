@@ -19,7 +19,7 @@ main {
 }
 main .header-container {
 	padding: 16px;
-	border-bottom: 1px solid white;
+	border-bottom: 2px solid #3b4354;
 }
 main h1 {
 	text-align: center;
@@ -312,9 +312,27 @@ h2 {
 	background: grey;
 	border-radius: 10px;
 }
-.group-item:nth-child(2) .image-state {
+/* .group-item:nth-child(2) .image-state {
 	background: rgba(239, 68, 68, 0.2);
-}
-.group-item:nth-child(1) .end-section p {
+} */
+/* .group-item:nth-child(1) .end-section p {
 	color: #22c55e;
+} */
+.group-item {
+	animation: fadeInLeft;
+	animation-duration: 0.5s;
+}
+.pax-total-Number {
+	color: white;
+}
+.total-pax-number-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.hidden {
+	display: none !important;
+}
+#required-input-field {
+	color: #cbd5e1;
 }
