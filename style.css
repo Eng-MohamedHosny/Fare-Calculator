@@ -9,7 +9,7 @@ body {
 	min-height: 100vh;
 	color: white;
 	font-family: "Work Sans", sans-serif;
-	background: #1d2331;
+	background: #101622;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -154,9 +154,10 @@ main h1 {
 	flex: 1;
 	flex-direction: column;
 	overflow: hidden;
-	min-height: calc(2 * 13rem);
+	min-height: calc(2 * 9rem + 1.6rem + 6rem);
 }
 .group-list {
+	min-height: 20.8rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1.6rem;
@@ -341,6 +342,9 @@ main h1 {
 }
 
 @media (min-width: 1024px) {
+	body {
+		background: #1d2331;
+	}
 	main {
 		display: grid;
 		grid-template-columns: 50fr 50fr;
