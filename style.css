@@ -154,6 +154,13 @@ main h1 {
 	flex: 1;
 	flex-direction: column;
 	overflow: hidden;
+	min-height: calc(2 * 13rem);
+}
+.group-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+	margin-bottom: 10px;
 }
 .group-list-container .group-list-header {
 	margin-bottom: 1.6rem;
@@ -180,12 +187,7 @@ main h1 {
 	letter-spacing: 1.4px;
 	text-transform: uppercase;
 }
-.group-list {
-	display: flex;
-	flex-direction: column;
-	gap: 1.6rem;
-	margin-bottom: 10px;
-}
+
 .group-item {
 	display: flex;
 	justify-content: space-between;
