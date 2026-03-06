@@ -18,6 +18,25 @@ const paxTotalRequiredAmountEl = document.querySelector(`.pax-total-required-amo
 
 const groupList = document.querySelector(".group-list");
 
+const clearAllEl = document.querySelector(".btn-clear-all");
+clearAllEl.addEventListener("click", function () {
+	clearListUI();
+	clearGroupInputs();
+	resetVariables();
+	fairAmountEl.value = null;
+	driverTotalEarningAmountEl.textContent = "00.00";
+	paxTotalRequiredAmountEl.textContent = "00.00";
+	paxTotalNumberEl.textContent = "00";
+	fairAmountEl.focus();
+});
+function resetVariables() {
+	fairAmount = 0;
+	driverTotalEarningAmount = 0;
+	paxTotalRequiredAmount = 0;
+	paxTotalNumber = 0;
+	groups.clearAllEl;
+	console.log(groups);
+}
 function clearListUI() {
 	groupList.innerHTML = "";
 }
@@ -35,7 +54,6 @@ const group = {
 	paid: 0,
 	required: 0,
 };
-// fairAmountEl.value = ``;
 function clearGroupInputs() {
 	paxNumberEl.value = ``;
 	paidAmountEl.value = ``;
@@ -44,14 +62,22 @@ function clearGroupInputs() {
 }
 
 clearGroupBtn.addEventListener(`click`, clearGroupInputs);
+const dynamicInputFields = [paxNumberEl, paidAmountEl, fairAmountEl];
 
-paidAmountEl.addEventListener(`input`, function () {
-	fairAmount = Number(fairAmountEl.value);
+dynamicInputFields.forEach((field) => {
+	field.addEventListener("input", function () {
+		let fieldValue = Number(field.value);
+		if (fieldValue < 0) {
+			field.value = Math.abs(fieldValue);
+		}
 
-	const groupNumber = Number(paxNumberEl.value);
-	const groupPaid = Number(paidAmountEl.value);
-	let groupRequired = groupPaid - groupNumber * fairAmount;
-	requiredAmountEl.value = groupRequired;
+		fairAmount = Number(fairAmountEl.value);
+
+		const groupNumber = Number(paxNumberEl.value);
+		const groupPaid = Number(paidAmountEl.value);
+		let groupRequired = groupPaid - groupNumber * fairAmount;
+		requiredAmountEl.value = groupRequired;
+	});
 });
 
 addGroupBtn.addEventListener(`click`, function () {

@@ -7,12 +7,16 @@ html {
 }
 body {
 	min-height: 100vh;
-	background: #101622;
 	color: white;
 	font-family: "Work Sans", sans-serif;
+	background: #1d2331;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 main {
-	height: 100%;
+	background: #101622;
+	height: 100vh;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -36,13 +40,11 @@ main h1 {
 	flex-direction: column;
 	gap: 1.6rem;
 }
-h2 {
+.inputs-section h2 {
 	font-size: 2.4rem;
 	font-weight: 700;
 	line-height: 32px; /* 133.333% */
 	letter-spacing: -0.6px;
-	padding-left: 16px;
-	padding-top: 8px;
 }
 .inputs-section label {
 	color: #cbd5e1;
@@ -148,6 +150,10 @@ h2 {
 
 .group-list-container {
 	padding: 0.2rem 1.6rem;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	overflow: hidden;
 }
 .group-list-container .group-list-header {
 	margin-bottom: 1.6rem;
@@ -178,6 +184,7 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	gap: 1.6rem;
+	margin-bottom: 10px;
 }
 .group-item {
 	display: flex;
@@ -300,7 +307,7 @@ h2 {
 	}
 }
 .group-list {
-	height: calc(2 * 10.6rem);
+	/* height: calc(2 * 10.6rem); */
 	overflow: auto;
 	scroll-behavior: smooth;
 }
@@ -312,12 +319,6 @@ h2 {
 	background: grey;
 	border-radius: 10px;
 }
-/* .group-item:nth-child(2) .image-state {
-	background: rgba(239, 68, 68, 0.2);
-} */
-/* .group-item:nth-child(1) .end-section p {
-	color: #22c55e;
-} */
 .group-item {
 	animation: fadeInLeft;
 	animation-duration: 0.5s;
@@ -335,4 +336,45 @@ h2 {
 }
 #required-input-field {
 	color: #cbd5e1;
+}
+
+@media (min-width: 1024px) {
+	main {
+		display: grid;
+		grid-template-columns: 50fr 50fr;
+		grid-template-rows: auto 1fr auto;
+		grid-template-areas:
+			"header header"
+			"inputs list"
+			"inputs totals";
+
+		max-width: 110rem;
+		height: 750px;
+		border-radius: 32px;
+		border: 1px solid #3b4354;
+		overflow: hidden;
+	}
+
+	main .header-container {
+		grid-area: header;
+	}
+
+	.inputs-section {
+		grid-area: inputs;
+		padding: 4rem;
+		border-right: 1px solid #3b4354;
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+		background: #101622;
+	}
+	.group-list-container {
+		grid-area: list;
+		padding: 3.2rem;
+	}
+	.totals-section {
+		grid-area: totals;
+		border-top: 1px solid #3b4354;
+		padding: 2.4rem 4rem;
+	}
 }
