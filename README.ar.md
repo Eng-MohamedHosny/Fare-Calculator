@@ -1,5 +1,7 @@
 # 📑 Features in this fare calculator
 
+## 🌐 [Go Live to the website](https://eng-mohamedhosny.github.io/Fare-Calculator/)
+
 # Fare Calculator
 
 [🇺🇸 English](README.md) | 🇪🇬 العربية

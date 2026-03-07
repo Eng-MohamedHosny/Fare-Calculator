@@ -2,6 +2,8 @@
 
 🇺🇸 English | [🇪🇬 العربية](README.ar.md)
 
+## 🌐 [Go Live to the website](https://eng-mohamedhosny.github.io/Fare-Calculator/)
+
 ## Overview
 
 Fare Calculator is a small utility designed to solve a very common problem in public transportation: **collecting fares from passengers without confusion or calculation mistakes.**
